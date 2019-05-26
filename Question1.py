@@ -16,8 +16,7 @@ def search(pat, txt):
 		if (j == M - 1): 
 			print("Pattern found at index ", i) 
 
-# Driver Code 
-if __name__ == '__main__': 
-	txt = "AABAACAADAABAAABAA"
-	pat = "A_BA"
-	search(pat, txt) 
+
+txt = "adasdaad"
+pat = "asda_"
+search(pat, txt) 
