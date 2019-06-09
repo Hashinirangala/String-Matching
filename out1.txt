@@ -1,2 +1,0 @@
-A pattern found at position 0
-A pattern found at position 3

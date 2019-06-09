@@ -2,11 +2,9 @@ def search(pat, txt,out_f):
     M = len(pat)
     N = len(txt)
     c = 0
-    list = []
 # A loop to slide pat[] one by one */
     if(N !=0 and M !=0 ):
         for i in range(0,(N - M +1)):
-
             # For current index i, check
             # for pattern match */
             for j in range(0,M):
@@ -14,16 +12,13 @@ def search(pat, txt,out_f):
                     break
             if ((j == M-1) and ((txt[i + j] == pat[j]) or (pat[j] =="_"))):
                 c += 1
-                list.append(i)
                 f = open(out_f, "a+")
                 f.write("A pattern found at position "+str(i)+"\n")
 
     if (c == 0):
-        print("no matching")
         f = open(out_f, "a+")
-        f.write("A pattern is not found  \n")
-    else:
-        print(list)
+        f.write("Pattern is not found  \n")
+
 
 
 n = int(input("Enter no  of pairs -: "))
