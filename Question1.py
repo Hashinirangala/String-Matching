@@ -1,38 +1,39 @@
-def search(pat, txt): 
-    M = len(pat) 
+def search(pat, txt,out_f):
+    M = len(pat)
     N = len(txt)
     c = 0
     list = []
-    # A loop to slide pat[] one by one */ 
-    for i in range(N - M + 1): 
-        # For current index i, check 
-            # for pattern match */ 
-        for j in range(0, M):
-            if ((txt[i + j] != pat[j]) and (pat[j]!="_")): 
-                break
-        if (j == M - 1):
-            c += 1
-            list.append(i)
-                
-    if(c==0):
+# A loop to slide pat[] one by one */
+    if(N !=0 and M !=0 ):
+        for i in range(0,(N - M +1)):
+
+            # For current index i, check
+            # for pattern match */
+            for j in range(0,M):
+                if ((txt[i + j] != pat[j]) and (pat[j] != "_")):
+                    break
+            if ((j == M-1) and ((txt[i + j] == pat[j]) or (pat[j] =="_"))):
+                c += 1
+                list.append(i)
+                f = open(out_f, "a+")
+                f.write("A pattern found at position "+str(i)+"\n")
+
+    if (c == 0):
         print("no matching")
-        print('\n')
+        f = open(out_f, "a+")
+        f.write("A pattern is not found  \n")
     else:
         print(list)
-        print('\n')
 
-f = open("test.txt", "r")
-f1 = f.readlines()
-k = 1
-for x in f1:
-	if(k%2 != 0):
-		txt = x
-		print("txt -: ",txt)
-		k += 1
-	else:
-		pat = x
-		print("pattern -: ",pat)
-		k += 1
-		search(pat,txt)
-		
-		
+
+n = int(input("Enter no  of pairs -: "))
+for j in range(1, n+1):
+    text_f = "text" + str(j) + ".txt"
+    pat_f = "pat" + str(j) + ".txt"
+    out_f = "out" + str(j) + ".txt"
+    text = open(text_f, "r").read()
+    pat = open(pat_f, "r").read()
+    search(pat, text, out_f)
+
+
+
