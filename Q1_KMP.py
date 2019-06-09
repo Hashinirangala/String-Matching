@@ -11,14 +11,11 @@ def prefixTable(pat):
            
         else:
             if j != 0:
-                j = table[j -1]
-                
+                j = table[j -1]  
             else:
                 table[i] = 0
                 i += 1
     print(table)       
                 
-    
-
 pat = "ababd"
 prefixTable(pat)
