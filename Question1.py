@@ -3,6 +3,7 @@ def search(pat, txt):
     M = len(pat) 
     N = len(txt)
     c = 0
+    count = 8;
 	list = []
     # A loop to slide pat[] one by one */ 
     for i in range(N - M + 1): 
