@@ -17,7 +17,7 @@ def search(pat, txt):
 			list.append(i)
 			
     if(c == 0):
-        print("no matching")
+        print("no string matching")
 	else:
 		print(list)
 
